@@ -1,0 +1,43 @@
+html,
+body,
+header {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+body {
+  font-family: monospace;
+  user-select: none;
+  font-size: 16px;
+}
+
+header {
+  height: 80px;
+  position: relative;
+  background-color: rgb(198, 239, 255);
+}
+
+.title {
+  line-height: 80px;
+  font-family: monospace;
+}
+
+.nav {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.link {
+  margin-right: 10px;
+}
+
+.a {
+  color: black;
+}

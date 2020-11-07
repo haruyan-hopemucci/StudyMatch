@@ -1,0 +1,14 @@
+body {
+  font-family: monospace;
+  user-select: none;
+  font-size: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  height: 400px;
+  margin: 0 auto;
+}

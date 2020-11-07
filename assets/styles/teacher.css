@@ -1,0 +1,26 @@
+body {
+  font-family: monospace;
+  user-select: none;
+  font-size: 16px;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.teacher-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.teacher {
+  width: 40%;
+  margin-bottom: 100px;
+}
