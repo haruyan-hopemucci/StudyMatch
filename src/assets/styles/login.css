@@ -1,0 +1,20 @@
+.form {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: monospace;
+  user-select: none;
+  font-size: 16px;
+  background-color: #fff;
+}

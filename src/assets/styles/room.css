@@ -1,0 +1,115 @@
+html,
+body,
+header {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background-color: #fff;
+}
+
+/* // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーー『検索結果』ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.human {
+  width: 35%;
+  border: 10px outset;
+  border-radius: 15px;
+  background-color: rgb(196, 222, 225);
+  padding: 25px;
+  margin-bottom: 100px;
+  transform: translateX(-3%);
+}
+
+.sp-human {
+  width: 70%;
+  border: 10px outset;
+  border-radius: 15px;
+  background-color: rgb(196, 222, 225);
+  padding: 25px;
+  margin-bottom: 100px;
+  transform: translateX(-7%);
+}
+
+/* // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーー『検索項目入力』ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.pc-form {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  font-weight: bold;
+  color: #fff;
+  border: 3px #ccc outset;
+  border-radius: 7px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn1 {
+  padding: 7px;
+}
+
+.sp-btn1 {
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.btn2 {
+  background-color: #bbb;
+  padding: 7px;
+}
+
+.sp-btn2 {
+  background-color: #bbb;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.btn3 {
+  background-color: #64a666;
+  padding: 7px;
+}
+
+.sp-btn3 {
+  background-color: #64a666;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.btn-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.pc-text {
+  margin: 0;
+  color: #fff;
+}

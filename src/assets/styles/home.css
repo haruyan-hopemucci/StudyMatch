@@ -1,0 +1,137 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  color: rgb(99, 99, 99);
+  background-color: #fff;
+}
+
+/* // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーー『Header』ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.pc-header,
+.tab-header {
+  height: 80px;
+  background-color: rgb(88, 187, 225);
+}
+
+.sp-header {
+  height: 90px;
+  background-color: rgb(88, 187, 225);
+}
+
+.pc-title {
+  margin: 0;
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+.tab-title {
+  margin: 0;
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+}
+.sp-title {
+  margin: 0;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  line-height: 3rem;
+}
+
+.nav {
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.icon {
+  margin-top: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーー『First-View』ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.pc-first-v {
+  color: #ddd;
+  height: 500px;
+  background-image: url(../img/first.png);
+  background-size: contain;
+  text-align: center;
+}
+
+.pc-first-t {
+  font-size: 1.8rem;
+  padding-top: 100px;
+  width: 60%;
+  margin: 0 auto;
+  color: rgb(99, 99, 99);
+}
+
+.tab-first-v {
+  color: #ddd;
+  height: 500px;
+  background-image: url(../img/first.png);
+  background-position: bottom;
+  background-size: cover;
+  text-align: center;
+}
+
+.tab-first-t {
+  font-size: 1.5rem;
+  padding-top: 100px;
+  width: 60%;
+  margin: 0 auto;
+  color: rgb(99, 99, 99);
+}
+
+.sp-first-v {
+  color: #ddd;
+  height: 500px;
+  background-image: url(../img/first.png);
+  background-position: bottom;
+  background-size: cover;
+  text-align: center;
+}
+
+.sp-first-t {
+  font-size: 1.3rem;
+  padding-top: 100px;
+  width: 60%;
+  margin: 0 auto;
+  color: rgb(99, 99, 99);
+}
+
+/* // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーー『Signup & Login』ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.resister-pc {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.resister-sp {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: #fff;
+}

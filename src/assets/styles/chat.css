@@ -1,0 +1,56 @@
+body {
+  background-color: #fff;
+}
+
+.container {
+  padding: 32px;
+}
+
+.messages {
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  border-radius: 8px;
+  padding: 10px 24px;
+  background-color: rgb(203, 203, 203);
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.right {
+  border-radius: 8px;
+  padding: 10px 24px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(123, 208, 244);
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50%;
+  margin: 0 0 15px auto;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 5px 10px;
+  max-width: 60%;
+  line-height: 1.3;
+}
+
+.text {
+  font-size: 1.4rem;
+}
+
+.sp-btn {
+  background-color: #3f51b5;
+  color: #fff;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.sp-submit {
+  background-color: #e91e63;
+  color: #fff;
+  height: 50px;
+  border-radius: 5px;
+}
