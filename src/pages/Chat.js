@@ -31,30 +31,67 @@ const Chat = () => {
   const func = async () => {
     let uid = auth.currentUser.uid;
     const chatData = [];
-    const data1 = db
+    const query1 = db
       .collection("messages")
       .where("senderUid", "==", uid)
       .where("receiverUid", "==", selectUid)
-      .orderBy("createdAt")
-      .get();
-    (await data1).forEach((postDoc) => {
+      .orderBy("createdAt");
+      /*
+      // docChangesで初期状態も取得できるので、実はこのget処理は必要ない。
+    const data1 = await query1.get();
+    (data1).forEach((postDoc) => {
       chatData.push(postDoc.data());
     });
-    const data2 = db
+    */
+    const query2 = db
       .collection("messages")
       .where("senderUid", "==", selectUid)
       .where("receiverUid", "==", uid)
-      .orderBy("createdAt")
-      .get();
-    (await data2).forEach((postDoc) => {
+      .orderBy("createdAt");
+      /*
+      // docChangesで初期状態も取得できるので、実はこのget処理は必要ない。
+    const data2 = await query2.get();
+    (data2).forEach((postDoc) => {
       chatData.push(postDoc.data());
     });
-
+*/
+/*
+      // よって最初にsetMessagesする処理も実は必要ない。
     chatData.sort(function (a, b) {
       return a.createdAt > b.createdAt ? 1 : -1;
     });
-    console.log(chatData);
+    console.log("initial chatdata:",chatData);
     setMessages(chatData);
+*/
+    // doc側が更新された場合の処理
+    // 初回実行時でも条件にあうデータがすべてaddedでdocChangesに入ってくるので
+    // 初期化もこの関数内でかねることができる。
+    // またこの関数はイベントのコールバックなので、初回に1回実行したら以後は実行しなくてよい。
+    // 2回以上実行したら実行した回数分重複して実行されてしまう。
+    query1.onSnapshot( qs => {
+      // 変更分データの取得処理
+      let changes = qs.docChanges();
+      console.log("changes:data1:", changes);
+      // 今回はaddedの処理は端折っています。どのみちすべてaddedになるので。
+      // messagesに追加分のデータをpushする。
+      changes.forEach( c => messages.push(c.doc.data()));
+      // pushしたら作成日付順にソートする。
+      messages.sort(function (a, b) {
+        return a.createdAt > b.createdAt ? 1 : -1;
+      });
+      // 最後に新しいオブジェクトとしてsetMassagesするとrender側に変更が検知される。
+      setMessages(Object.assign([],messages));
+    });
+    // 相手→自分へのメッセージの場合も同じ。
+    query2.onSnapshot( qs => {
+        let changes = qs.docChanges();
+      console.log("changes:data2:", changes);
+      changes.forEach( c => messages.push(c.doc.data()));
+      messages.sort(function (a, b) {
+        return a.createdAt > b.createdAt ? 1 : -1;
+      });
+      setMessages(Object.assign([],messages));
+    });
   };
 
   useEffect(() => {
@@ -80,7 +117,9 @@ const Chat = () => {
       })
       .then(() => {
         setContent("");
-        func();
+        // メッセージを送るたびにfuncを実行したらgetやonSnapshotの処理が重複して実行されてしまう。
+        // funcは初回の1回だけで良い！
+        //func();
       });
   };
   // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
